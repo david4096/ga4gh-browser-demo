@@ -58,10 +58,8 @@ ga4gh_repo add-variantset ga4gh-example-data/repo.db browser-demo /Users/data/10
 echo "Adding evs variant set..." 
 ga4gh_repo add-variantset ga4gh-example-data/repo.db browser-demo /Users/david/data/evs --referenceSetName NCBI37
 
-# This one looks like a long shot, maybe viral DNA? If we can't add as a directory try adding
-# individually.
-echo "Add eboVir2 variants"
-ga4gh_repo add-variantset ga4gh-example-data/repo.db browser-demo /Users/david/hive/data/gbdb/eboVir2/gire --referenceSetName NCBI37
+echo "Adding remote BAM"
+ga4gh_repo add-readgroupset ga4gh-example-data/repo.db browser-demo -RNCBI37 "http://s3.amazonaws.com/1000genomes/phase3/data/HG00096/alignment/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam" -I "/Users/david/Downloads/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam.bai"
 
 # Now we can try to start the server, things that weren't added will have failed gracefully.
 echo "Starting server..."
