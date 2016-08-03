@@ -22,9 +22,9 @@ source env/bin/activate
 # First we'll install ga4gh
 pip install ga4gh
 
-# Next, we want to use jupyter and matplotlib we're going to use them
+# Next, we want to use jupyter we're going to use it 
 # for the client part of the demo.
-pip install jupyter matplotlib
+pip install jupyter
 
 ga4gh_server # is now installed and will tell us it's useless without data
 
@@ -59,7 +59,7 @@ echo "Adding evs variant set..."
 ga4gh_repo add-variantset ga4gh-example-data/repo.db browser-demo /Users/david/data/evs --referenceSetName NCBI37
 
 echo "Adding remote BAM"
-ga4gh_repo add-readgroupset ga4gh-example-data/repo.db browser-demo -RNCBI37 "http://s3.amazonaws.com/1000genomes/phase3/data/HG00096/alignment/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam" -I "/Users/david/Downloads/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam.bai"
+ga4gh_repo add-readgroupset ga4gh-example-data/repo.db browser-demo -RNCBI37 "http://s3.amazonaws.com/1000genomes/phase3/data/HG00096/alignment/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam" -I "/Users/david/data/1000genomes/indexes/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam.bai"
 
 # Now we can try to start the server, things that weren't added will have failed gracefully.
 echo "Starting server..."
